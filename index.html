@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portafolio profesional de Damian Uscapi Baez, desarrollador web experto en React, NestJS, Angular y Tailwind CSS. Descubre sus proyectos y servicios.">
+  <meta name="keywords"
+    content="Damian Uscapi Baez, portafolio, desarrollador web, React, NestJS, Angular, Tailwind CSS, JavaScript, Frontend, Backend">
+  <meta name="author" content="Damian Uscapi Baez">
+  <meta property="og:title" content="Portafolio de Damian Uscapi Baez">
+  <meta property="og:description"
+    content="Explora los proyectos y servicios de Damian Uscapi Baez, desarrollador especializado en tecnologías modernas.">
+  <meta property="og:image" content="/assets/images/banner2.webp">
+  <meta property="og:url" content="https://www.tu-dominio.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Damian Uscapi Baez - Desarrollador Web</title>
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <title>Portfolio Website</title>
+</head>
+
+<body class="bg-black text-white" id="body">
+  <!-- Prealoder -->
+  <div id="transition-container">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 w-full p-4 md:p-8 shadow-lg flex justify-between items-center z-50">
+    <a href="#" id="site-name"
+      class="text-3xl md:text-4xl font-extrabold text-[#b74b4b] hover:scale-105 transition-transform duration-500">Damian</a>
+
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-8">
+      <a href="#home" id="menu-home"
+        class="text-xl font-medium hover:text-[#b74b4b] hover:border-[#b74b4b] hover:border-b-2 hover:border-[#b74b4b] transition-all">Inicio</a>
+      <a href="#resume" id="menu-resume"
+        class="text-xl font-medium hover:text-[#b74b4b] hover:border-[#b74b4b] hover:border-b-2 hover:border-[#b74b4b] transition-all">Resumen</a>
+      <a href="#services" id="menu-services"
+        class="text-xl font-medium hover:text-[#b74b4b] hover:border-[#b74b4b] hover:border-b-2 hover:border-[#b74b4b] transition-all">Servicios</a>
+      <a href="#works" id="menu-works"
+        class="text-xl font-medium hover:text-[#b74b4b] hover:border-[#b74b4b] hover:border-b-2 hover:border-[#b74b4b] transition-all">Trabajos</a>
+    </nav>
+
+    <!-- Hamburger Icon (Menu en móvil) -->
+    <div class="md:hidden flex items-center space-x-4">
+      <button id="menu-toggle" class="text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Dark Mode Button & Language Selector always visible -->
+    <div class="flex space-x-4 items-center">
+      <!-- Dark Mode Toggle -->
+      <button id="dark-mode-toggle" class="text-2xl">
+        <i id="mode-icon" class="fas fa-sun"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu móvil -->
+  <div id="mobile-menu"
+    class="md:hidden w-full hidden fixed inset-0 flex justify-center items-center z-40 bg-opacity-75">
+    <nav class="w-full h-full p-8 flex flex-col justify-center items-center space-y-6">
+      <a href="#home" id="menu-home-mobil"
+        class="text-2xl font-medium hover:border-[#b74b4b] hover:border-b-2 hover:border-[#b74b4b]">Home</a>
+      <a href="#resume" id="menu-resume-mobil"
+        class="text-2xl font-medium hover:text-[#b74b4b] hover:border-[#b74b4b] hover:border-b-2 hover:border-[#b74b4b] transition-all">Resumen</a>
+      <a href="#services" id="menu-services-mobil"
+        class="text-2xl font-medium hover:text-[#b74b4b] hover:border-[#b74b4b] hover:border-b-2 hover:border-[#b74b4b] transition-all">Services</a>
+      <a href="#works" id="menu-works-mobil"
+        class="text-2xl font-medium hover:text-[#b74b4b] hover:border-[#b74b4b] hover:border-b-2 hover:border-[#b74b4b] transition-all">Trabajos</a>
+      <button id="close-menu" class="text-3xl text-[#b74b4b] mt-8">
+        <i class="fas fa-times"></i>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Main Home Section -->
+  <section id="home" class="home grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 py-24 md:py-32 px-8 min-h-screen">
+    <div class="home-img hidden md:flex mx-auto mb-8 md:mb-0">
+      <img src="/assets/images/banner2.svg" alt="Ilustración representativa de Damian Uscapi Baez"
+        class="w-[50vw] md:w-[25vw] h-[65vh] rounded-full shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer">
+    </div>
+
+    <div class="home-content text-center md:text-left flex flex-col justify-center items-center md:items-start">
+      <h1 id="home-title" class="text-4xl md:text-6xl font-bold leading-snug mb-4">Hola, soy Damian</h1>
+      <h2 id="home-subtitle" class="text-3xl md:text-4xl font-semibold mb-4">Soy Desarrollador de Software</h2>
+      <p id="home-description" class="text-lg md:text-xl mb-8">
+        <span class="text-[#e75a5a] font-bold">Técnico en Computación e Informática</span> con más de 2 años de
+        experiencia desarrollando soluciones web robustas y escalables. Enfocado en rendimiento, eficiencia y una
+        experiencia de usuario optimizada.
+      </p>
+
+      <div class="social-icons flex justify-center md:justify-start items-center mb-8 space-x-6">
+        <a href="mailto:damian.ubd@gmail.com"
+          class="px-8 py-3 bg-transparent rounded-full text-[#e75a5a] text-lg font-semibold tracking-wide border-2 border-[#e75a5a] transition-all hover:bg-[#e75a5a] hover:text-white hover:shadow-lg hover:scale-105 flex items-center space-x-2"
+          aria-label="Enviar correo a Damian Uscapi Baez">
+          <!-- Ícono de correo SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z" />
+          </svg>
+          <span>Contáctame</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/damian-uscapi-baez-576a911b2" target="_blank" rel="noopener noreferrer"
+          class="w-12 h-12 flex justify-center items-center bg-transparent border-2 border-[#e75a5a] text-[#e75a5a] rounded-full text-2xl transition-all hover:bg-[#e75a5a] hover:text-white hover:shadow-lg hover:scale-110"
+          aria-label="Perfil de LinkedIn de Damian Uscapi Baez">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://github.com/DamianUscapiBaez" target="_blank" rel="noopener noreferrer"
+          class="w-12 h-12 flex justify-center items-center bg-transparent border-2 border-[#e75a5a] text-[#e75a5a] rounded-full text-2xl transition-all hover:bg-[#e75a5a] hover:text-white hover:shadow-lg hover:scale-110"
+          aria-label="Repositorio de GitHub de Damian Uscapi Baez">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Resume Section -->
+  <section id="resume"
+    class="resume max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-24 md:py-32 px-4 min-h-screen">
+    <!-- Tabs -->
+    <div class="flex flex-col space-y-4 md:col-span-1">
+      <button
+        class="tab-btn py-3 px-4 w-full text-left rounded-xl border border-gray-700 hover:bg-gray-700 hover:text-white transition-all active-tab"
+        data-tab="experience">Experiencia</button>
+      <button
+        class="tab-btn py-3 px-4 w-full text-left rounded-xl border border-gray-700 hover:bg-gray-700 hover:text-white transition-all"
+        data-tab="education">Educación</button>
+      <button
+        class="tab-btn py-3 px-4 w-full text-left rounded-xl border border-gray-700 hover:bg-gray-700 hover:text-white transition-all"
+        data-tab="skills">Habilidades</button>
+    </div>
+    <!-- Contenido -->
+    <div class="w-full md:col-span-2">
+      <!-- Experiencia -->
+      <div id="experience"
+        class="tab-content p-8 rounded-2xl shadow-2xl border border-gray-600 transition-all duration-500">
+        <h2 class="text-3xl font-extrabold mb-6 text-[#e75a5a] border-b-2 border-[#e75a5a] inline-block pb-1">
+          Experiencia
+        </h2>
+        <div class="space-y-6">
+          <!-- Experiencia 1 -->
+          <div
+            class="p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 border border-gray-700">
+            <h3 class="text-2xl font-bold mb-1">
+              Programador Front-end React
+            </h3>
+            <h4 class="text-lg text-[#e75a5a] font-semibold">
+              LAPTOP PRO
+            </h4>
+            <span class="text-sm text-gray-400 block mt-1 italic">
+              Agosto 2022 - Abril 2023
+            </span>
+            <p class="mt-4 leading-relaxed">
+              Desarrollé <strong>interfaces dinámicas</strong> y formularios con <strong>React.js</strong>, integrando
+              eficazmente <strong>API REST
+                PHP</strong>. Mejoré la <strong>experiencia del usuario</strong> y la funcionalidad
+              del sistema.
+            </p>
+          </div>
+          <!-- Experiencia 2 -->
+          <div
+            class="p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 border border-gray-700">
+            <h3 class="text-2xl font-bold text-white mb-1">
+              Programador C#
+            </h3>
+            <h4 class="text-lg text-[#e75a5a] font-semibold">
+              Cusco Informático
+            </h4>
+            <span class="text-sm text-gray-400 block mt-1 italic">
+              Noviembre 2019 - Febrero 2020
+            </span>
+            <p class="mt-4 leading-relaxed">
+              Creación de <strong>formularios</strong> y aplicaciones en <strong>C#</strong>, con conexiones a
+              <strong>bases de datos SQL</strong>.
+              Desarrollé interfaces intuitivas y sistemas eficientes, asegurando una <strong>experiencia de usuario
+                fluida</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Educación -->
+      <div id="education"
+        class="tab-content p-8 rounded-2xl shadow-2xl border border-gray-600 transition-all duration-500 hidden">
+        <h2 class="text-3xl font-extrabold mb-6 text-[#e75a5a] border-b-2 border-[#e75a5a] inline-block pb-1">
+          Educación
+        </h2>
+        <div class="space-y-6">
+          <div
+            class="p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 border border-gray-700">
+            <h3 class="text-2xl font-bold mb-1">
+              Carrera Técnica Profesional
+            </h3>
+            <h4 class="text-lg text-[#e75a5a] font-semibold">
+              Instituto Superior Tecnológico Tupac Amaru
+            </h4>
+            <span class="text-sm text-gray-400 block mt-1 italic">
+              Abril 2018 - Diciembre 2020
+            </span>
+            <p class="mt-4 leading-relaxed">
+              Me formé en el Instituto Superior Tecnológico Tupac Amaru, donde adquirí conocimientos en el desarrollo de
+              sistemas informáticos, incluyendo aplicaciones web, móviles y de escritorio. Además, obtuve experiencia en
+              redes informáticas y reparación de computadoras, lo que me proporciona una base completa en tecnología de
+              la información.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Skills -->
+      <div id="skills"
+        class="tab-content p-8 rounded-2xl shadow-2xl border border-gray-600 transition-all duration-500 hidden">
+        <h2 class="text-3xl font-extrabold mb-6 text-[#e75a5a] border-b-2 border-[#e75a5a] inline-block pb-1">
+          Habilidades
+        </h2>
+        <!-- Frontend Skills -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold mb-4">Frontend</h3>
+          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 place-items-center">
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/html5.svg" alt="HTML5"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">HTML5</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/css_old.svg" alt="CSS3"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">CSS3</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/javascript.svg" alt="JavaScript"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">JavaScript</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/bootstrap.svg" alt="Bootstrap"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">Bootstrap</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/tailwindcss.svg" alt="Tailwind CSS"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">Tailwind CSS</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/react_light.svg" alt="React.js"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">React.js</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/nextjs_icon_dark.svg" alt="Next.js"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">Next.js</span>
+            </div>
+          </div>
+        </div>
+        <!-- Backend Skills -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Backend</h3>
+          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 place-items-center">
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/php.svg" alt="PHP"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">PHP</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/nestjs.svg" alt="NestJS"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">NestJS</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/mysql.svg" alt="MySQL"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">MySQL</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/postgresql.svg" alt="PostgreSQL"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300" />
+              <span class="text-sm mt-2">PostgreSQL</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img src="/assets/images/csharp.svg" alt="C#"
+                class="w-12 h-12 hover:scale-110 transition-transform duration-300 text-black" />
+              <span class="text-sm mt-2">C#</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services Section -->
+  <section id="services" class="max-w-7xl mx-auto py-24 md:py-32 px-4 min-h-screen">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center text-[#e75a5a] mb-6">Servicios</h2>
+    <div id="servicesall" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    </div>
+  </section>
+
+  <!-- Works Section -->
+  <section id="works" class="max-w-7xl mx-auto py-24 md:py-32 px-6 min-h-screen">
+    <h2 class="text-5xl font-extrabold text-center text-[#e75a5a] mb-6 tracking-wide">Proyectos Destacados</h2>
+
+    <div class="relative">
+      <!-- Carousel Container -->
+      <div class="carousel overflow-hidden relative rounded-3xl shadow-2xl">
+
+        <!-- Slide 1 -->
+        <div
+          class="carousel-item flex flex-col md:flex-row items-center justify-between border p-8 md:p-12 transition-transform duration-700 ease-in-out rounded-3xl">
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <h3 class="text-2xl font-bold text-[#e75a5a] mb-2">01</h3>
+            <h3 class="text-4xl font-bold mb-6">Proyecto Frontend</h3>
+            <p class="text-gray-600 leading-relaxed mb-6 text-lg">
+              Desarrollo de interfaces modernas, responsivas y optimizadas para una experiencia de usuario superior.
+            </p>
+            <div class="flex space-x-4 border-b-2 border-gray-700 pb-3 mb-4">
+              <div
+                class="flex items-center border border-gray-600 rounded-lg p-1.5 bg-gray-800 hover:bg-gray-700 transition duration-200">
+                <img src="/assets/images/html5.svg" alt="HTML5" class="w-5 h-5">
+                <span class="text-xs text-gray-300 ml-1.5">HTML5</span>
+              </div>
+              <div
+                class="flex items-center border border-gray-600 rounded-lg p-1.5 bg-gray-800 hover:bg-gray-700 transition duration-200">
+                <img src="/assets/images/css_old.svg" alt="CSS3" class="w-5 h-5">
+                <span class="text-xs text-gray-300 ml-1.5">CSS3</span>
+              </div>
+              <div
+                class="flex items-center border border-gray-600 rounded-lg p-1.5 bg-gray-800 hover:bg-gray-700 transition duration-200">
+                <img src="/assets/images/javascript.svg" alt="JavaScript" class="w-5 h-5">
+                <span class="text-xs text-gray-300 ml-1.5">JavaScript</span>
+              </div>
+            </div>
+            <div class="flex space-x-4">
+              <a href="https://preview-link.com" target="_blank"
+                class="flex items-center px-5 py-3 bg-[#e75a5a] text-white rounded-full shadow-lg hover:bg-[#d94a4a] transition-transform transform hover:scale-105">
+                <i class="fa-solid fa-eye mr-2"></i> Preview
+              </a>
+              <a href="https://github.com/DamianUscapiBaez" target="_blank"
+                class="flex items-center px-5 py-3 bg-gray-700 text-white rounded-full shadow-lg hover:bg-[#e75a5a] hover:text-white transition-transform transform hover:scale-105">
+                <i class="fa-brands fa-github mr-2"></i> Código
+              </a>
+            </div>
+          </div>
+          <div class="md:w-1/3">
+            <img src="/assets/work/thumb1.png" alt="Proyecto 1" class="rounded-3xl shadow-lg border-4 border-gray-700">
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div
+          class="carousel-item hidden flex flex-col md:flex-row items-center justify-between border p-8 md:p-12 transition-transform duration-700 ease-in-out rounded-3xl">
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <h3 class="text-2xl font-bold text-[#e75a5a] mb-2">02</h3>
+            <h3 class="text-4xl font-bold mb-6">Proyecto Backend</h3>
+            <p class="text-gray-600 leading-relaxed mb-6 text-lg">
+              Creación de APIs REST seguras y eficientes con integración de bases de datos robustas.
+            </p>
+            <div class="flex space-x-4 border-b-2 border-gray-700 pb-3 mb-4">
+              <div
+                class="flex items-center border border-gray-600 rounded-lg p-1.5 bg-gray-800 hover:bg-gray-700 transition duration-200">
+                <img src="/assets/images/html5.svg" alt="HTML5" class="w-5 h-5">
+                <span class="text-xs text-gray-300 ml-1.5">HTML5</span>
+              </div>
+              <div
+                class="flex items-center border border-gray-600 rounded-lg p-1.5 bg-gray-800 hover:bg-gray-700 transition duration-200">
+                <img src="/assets/images/css_old.svg" alt="CSS3" class="w-5 h-5">
+                <span class="text-xs text-gray-300 ml-1.5">CSS3</span>
+              </div>
+              <div
+                class="flex items-center border border-gray-600 rounded-lg p-1.5 bg-gray-800 hover:bg-gray-700 transition duration-200">
+                <img src="/assets/images/javascript.svg" alt="JavaScript" class="w-5 h-5">
+                <span class="text-xs text-gray-300 ml-1.5">JavaScript</span>
+              </div>
+            </div>
+            <div class="flex space-x-4">
+              <a href="https://preview-link.com" target="_blank"
+                class="flex items-center px-5 py-3 bg-[#e75a5a] text-white rounded-full shadow-lg hover:bg-[#d94a4a] transition-transform transform hover:scale-105">
+                <i class="fa-solid fa-eye mr-2"></i> Preview
+              </a>
+              <a href="https://github.com/DamianUscapiBaez" target="_blank"
+                class="flex items-center px-5 py-3 bg-gray-700 text-white rounded-full shadow-lg hover:bg-[#e75a5a] hover:text-white transition-transform transform hover:scale-105">
+                <i class="fa-brands fa-github mr-2"></i> Código
+              </a>
+            </div>
+          </div>
+          <div class="md:w-1/3">
+            <img src="/assets/work/thumb2.png" alt="Proyecto 2" class="rounded-3xl shadow-lg border-4 border-gray-700">
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="flex justify-center space-x-6 items-center w-full mt-10">
+        <button id="prev"
+          class="bg-[#e75a5a] hover:bg-[#d94a4a] text-white p-4 rounded-full shadow-xl transform hover:scale-110 transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button id="next"
+          class="bg-[#e75a5a] hover:bg-[#d94a4a] text-white p-4 rounded-full shadow-xl transform hover:scale-110 transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Desarrollo Web",
+        "description": "Desarrollo sitios web modernos y responsivos, optimizados para rendimiento y adaptados a las necesidades de tu negocio.",
+        "icon": "fa-solid fa-code"
+    },
+    {
+        "id": 2,
+        "title": "Diseño UI/UX",
+        "description": "Creo interfaces intuitivas y atractivas que mejoran la experiencia del usuario, garantizando una navegación fluida y eficiente.",
+        "icon": "fa-solid fa-pencil-ruler"
+    },
+    {
+        "id": 3,
+        "title": "Optimización SEO",
+        "description": "Mejoro la visibilidad y el posicionamiento de tu sitio web con técnicas SEO efectivas, atrayendo más tráfico y clientes potenciales.",
+        "icon": "fa-solid fa-chart-line"
+    },
+    {
+        "id": 4,
+        "title": "Desarrollo de aplicaciones",
+        "description": "Desarrollo aplicaciones móviles y de escritorio eficientes, con interfaces intuitivas y alto rendimiento para una mejor experiencia del usuario.",
+        "icon": "fa-solid fa-mobile-screen-button"
+    }
+]

@@ -1,0 +1,115 @@
+/* ==========================
+   Estilos Generales
+========================== */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    /* overflow: hidden; */
+    /* Descomentar si deseas deshabilitar el scroll */
+}
+
+/* ==========================
+   Preloader
+========================== */
+#transition-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.bar {
+    flex: 1;
+    width: 100%;
+    background-color: #b02020;
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+/* ==========================
+   Encabezado (Header)
+========================== */
+header {
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transición suave para color de fondo y texto */
+}
+
+/* ==========================
+   Selector de Idioma
+========================== */
+#language-selector {
+    transition: all 0.3s ease;
+    /* Transición suave para todos los cambios */
+}
+
+#language-selector:hover {
+    background-color: #b74b4b;
+    color: white;
+}
+
+#language-selector:focus {
+    outline: none;
+    /* border: 2px solid #b74b4b; */
+    /* Descomentar si deseas un borde al enfocar */
+}
+
+/* Ícono junto al selector de idioma */
+#language-selector+svg {
+    transition: all 0.3s ease;
+    /* Transición suave para el ícono */
+}
+
+#language-selector:hover+svg {
+    transform: rotate(180deg);
+    /* Rotación del ícono al pasar el mouse */
+}
+
+/* ==========================
+   Scroll Personalizado
+========================== */
+/* Estilo del Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    /* Ancho del scrollbar */
+}
+
+/* Estilo del pulgar (thumb) del Scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: #b74b4b;
+    /* Color del pulgar */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+    /* Transición suave para el cambio de color */
+}
+
+/* Hover sobre el pulgar del Scrollbar */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #9e3a3a;
+    /* Color más oscuro al pasar el mouse */
+}
+
+/* Fondo del Scrollbar (track) */
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Color del fondo del track */
+    border-radius: 10px;
+}
+
+/* ==========================
+   Enlaces Activos en la Navegación
+========================== */
+.active {
+    border-bottom: #b74b4b solid 2px !important;
+    /* Subrayado en la parte inferior */
+    color: #b74b4b !important;
+    /* Color del texto activo */
+}

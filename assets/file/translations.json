@@ -1,0 +1,26 @@
+{
+    "en": {
+        "siteName": "Damian",
+        "menuHome": "Home",
+        "menuServices": "Services",
+        "menuSkills": "Skills",
+        "menuEducation": "Education",
+        "menuExperience": "Experience",
+        "homeTitle": "Hi, It's Damian",
+        "homeSubtitle": "I'm a Software Developer",
+        "homeDescription": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+        "hireMe": "Hire me"
+    },
+    "es": {
+        "siteName": "Damian",
+        "menuHome": "Inicio",
+        "menuServices": "Servicios",
+        "menuSkills": "Habilidades",
+        "menuEducation": "Educación",
+        "menuExperience": "Experiencia",
+        "homeTitle": "Hola, soy Damian",
+        "homeSubtitle": "Soy Desarrollador de Software",
+        "homeDescription": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+        "hireMe": "Contactame"
+    }
+}
