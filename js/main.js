@@ -6,8 +6,8 @@ const DOM = {
     darkModeToggle: document.getElementById('dark-mode-toggle'),
     modeIcon: document.getElementById('mode-icon'),
     body: document.getElementById('body'),
-    menuLinks: document.querySelectorAll("nav a, #mobile-menu a"),
-    sections: document.querySelectorAll('section'),
+    menuLinksDesktop: document.querySelectorAll("nav a"),  // Enlaces del menú principal
+    menuLinksMobile: document.querySelectorAll("#mobile-menu a"), sections: document.querySelectorAll('section'),
     tabs: document.querySelectorAll('.tab-btn'),
     contents: document.querySelectorAll('.tab-content'),
     slides: document.querySelectorAll('.carousel-item'),
@@ -32,8 +32,9 @@ const Theme = {
         DOM.body.classList.add(savedTheme);
         DOM.modeIcon.classList.replace(savedTheme === 'dark-mode' ? 'fa-sun' : 'fa-moon', savedTheme === 'dark-mode' ? 'fa-moon' : 'fa-sun');
 
-        // Aplicar color al menú móvil según el tema
+        // Aplicar color de fondo al menú móvil según el tema
         DOM.mobileMenu.classList.toggle('bg-white', savedTheme === 'light-mode');
+        DOM.mobileMenu.classList.toggle('bg-[#161616]', savedTheme === 'dark-mode'); // Fondo oscuro
     },
     toggle: () => {
         DOM.body.classList.toggle('dark-mode');
@@ -43,8 +44,9 @@ const Theme = {
         DOM.modeIcon.classList.toggle('fa-sun');
         DOM.modeIcon.classList.toggle('fa-moon');
 
-        // Cambiar color del menú móvil cuando se cambia el tema
+        // Cambiar color de fondo del menú móvil cuando se cambia el tema
         DOM.mobileMenu.classList.toggle('bg-white', theme === 'light-mode');
+        DOM.mobileMenu.classList.toggle('bg-[#161616]', theme === 'dark-mode'); // Fondo oscuro
     }
 };
 // === Funciones de menú ===
@@ -60,10 +62,10 @@ const Scroll = {
         state.scrollTimeout = setTimeout(Scroll.onScroll, 100);
     },
     onScroll: () => {
-        const scrollPosition = window.scrollY + 80; // Ajusta el offset según el header
+        const scrollPosition = window.scrollY + 80;
         let currentSection = null;
 
-        // Encuentra la sección actual basada en la posición del scroll
+        // Detectar la sección actual
         DOM.sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
@@ -73,10 +75,12 @@ const Scroll = {
             }
         });
 
-        // Aplica la clase "active" al enlace correspondiente
-        DOM.menuLinks.forEach(link => {
-            const linkHref = link.getAttribute('href').substring(1);
-            link.classList.toggle('active', linkHref === currentSection);
+        // Aplica la clase "active" a los enlaces del menú principal y móvil
+        [DOM.menuLinksDesktop, DOM.menuLinksMobile].forEach(linkGroup => {
+            linkGroup.forEach(link => {
+                const linkHref = link.getAttribute('href').substring(1);
+                link.classList.toggle('active', linkHref === currentSection);
+            });
         });
     },
     smoothScroll: (event) => {
@@ -91,10 +95,11 @@ const Scroll = {
             });
 
             // Actualiza la clase "active" inmediatamente al hacer clic
-            DOM.menuLinks.forEach(link => {
+            [...DOM.menuLinksDesktop, ...DOM.menuLinksMobile].forEach(link => {
                 const linkHref = link.getAttribute('href').substring(1);
                 link.classList.toggle('active', linkHref === targetId);
             });
+
 
             // Cierra el menú móvil si está visible
             if (window.innerWidth < 768) {  // Detecta si es pantalla móvil
@@ -182,7 +187,9 @@ const init = () => {
     DOM.prevBtn.addEventListener('click', Carousel.prev);
     window.addEventListener('scroll', Scroll.handleScroll);
 
-    DOM.menuLinks.forEach(link => link.addEventListener('click', Scroll.smoothScroll));
+    [...DOM.menuLinksDesktop, ...DOM.menuLinksMobile].forEach(link =>
+        link.addEventListener('click', Scroll.smoothScroll)
+    );
 
     Theme.apply();
     Services.load();
@@ -190,8 +197,9 @@ const init = () => {
     Scroll.onScroll();
     Preloader.hide();
 
-    // Seleccionar "Inicio" por defecto
-    DOM.menuLinks[0].classList.add('active');
+    // Seleccionar "Inicio" por defecto en ambos menús
+    DOM.menuLinksDesktop[0].classList.add('active');
+    DOM.menuLinksMobile[0].classList.add('active');
 };
 
 window.addEventListener('load', init);
