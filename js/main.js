@@ -71,8 +71,8 @@ function setActiveLinkOnLoad() {
 // === Animación del Preloader ===
 function animatePreloader() {
     const bars = document.querySelectorAll('.bar');
+
     if (bars.length === 0) {
-        console.warn("No se encontraron elementos con la clase '.bar'.");
         document.getElementById('transition-container').style.display = 'none';
         document.getElementById('content').style.display = 'flex';
         return;
@@ -93,6 +93,7 @@ function animatePreloader() {
                 delay: anime.stagger(200),
                 complete: () => {
                     document.getElementById('transition-container').style.display = 'none';
+                    document.getElementById('content').style.display = 'block'; // Mostrar contenido después del preloader
                 }
             });
         }
@@ -104,7 +105,7 @@ function loadDataServices() {
         .then(response => response.json())
         .then(servicesData => {
             const servicesContainer = document.getElementById('servicesall');
-            
+
             servicesData.forEach(service => {
                 const serviceCard = document.createElement('div');
                 serviceCard.className = 'service-card p-4 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300';
@@ -119,7 +120,7 @@ function loadDataServices() {
                     </p>
                     <a href="mailto:damian.ubd@gmail.com" aria-label="Enviar correo a Damian Uscapi Baez" class="text-[#e75a5a] font-semibold hover:underline">Más información →</a>
                 `;
-                
+
                 servicesContainer.appendChild(serviceCard);
             });
         })
@@ -161,12 +162,6 @@ document.getElementById('prev').addEventListener('click', () => {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     slides[currentSlide].classList.remove('hidden');
 });
-
-setInterval(() => {
-    slides[currentSlide].classList.add('hidden');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.remove('hidden');
-}, 5000);
 
 // === Eventos de Carga y Scroll ===
 window.addEventListener('load', () => {
