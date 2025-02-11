@@ -100,7 +100,7 @@ function animatePreloader() {
 }
 // === Cargar Servicios desde JSON ===
 function loadDataServices() {
-    fetch('/assets/file/services.json')
+    fetch('https://damianuscapibaez.github.io/portfolio/assets/file/services.json')
         .then(response => response.json())
         .then(servicesData => {
             const servicesContainer = document.getElementById('servicesall');
