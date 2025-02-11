@@ -108,8 +108,9 @@ header {
    Enlaces Activos en la Navegación
 ========================== */
 .active {
-    border-bottom: #b74b4b solid 2px !important;
     /* Subrayado en la parte inferior */
     color: #b74b4b !important;
+    border-bottom-width: 2px;
+    border-color: #b74b4b;
     /* Color del texto activo */
 }
