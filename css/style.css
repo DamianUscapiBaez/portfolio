@@ -1,36 +1,98 @@
 /* ==========================
+   Variables Globales
+========================== */
+:root {
+    --primary-color: #e75a5a;
+    /* Color primario */
+    --secondary-color: #b74b4b;
+    /* Color secundario */
+    --background-light: #f9f9f9;
+    /* Fondo en modo claro */
+    --background-dark: #121212;
+    /* Fondo en modo oscuro */
+    --text-light: #333333;
+    /* Texto en modo claro */
+    --text-dark: #f5f5f5;
+    /* Texto en modo oscuro */
+    --accent-light: #ffd1d1;
+    /* Color de acento en modo claro */
+    --accent-dark: #ff7a7a;
+    /* Color de acento en modo oscuro */
+}
+
+/* ==========================
    Estilos Generales
 ========================== */
-body,
-html {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    /* Modelo de caja consistente */
+}
+
+html,
+body {
     height: 100%;
-    font-family: Arial, sans-serif;
-    /* overflow: hidden; */
-    /* Descomentar si deseas deshabilitar el scroll */
+    font-family: 'Courier New', Courier, monospace;
+    /* Fuente principal */
+}
+
+body.light-mode {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
 }
 
 /* ==========================
    Preloader
 ========================== */
-#transition-container {
+#preloader {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 100;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+    /* Asegura que esté por encima de todo */
 }
 
-.bar {
-    flex: 1;
-    width: 100%;
-    background-color: #b02020;
-    transform: scaleY(0);
-    transform-origin: bottom;
+.code-line {
+    font-size: 1.5rem;
+    color: #58a6ff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #58a6ff;
+    width: 0;
+    animation: typing 2s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+#content {
+    display: none;
+    /* Oculta el contenido hasta que se cargue la página */
 }
 
 /* ==========================
@@ -38,8 +100,13 @@ html {
 ========================== */
 header {
     font-family: 'Arial', sans-serif;
+    background-color: rgba(0, 0, 0, 0.8);
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* Transición suave para color de fondo y texto */
+    /* Transición suave */
+}
+
+.light-mode header {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* ==========================
@@ -51,20 +118,18 @@ header {
 }
 
 #language-selector:hover {
-    background-color: #b74b4b;
+    background-color: var(--secondary-color);
     color: white;
 }
 
 #language-selector:focus {
     outline: none;
-    /* border: 2px solid #b74b4b; */
-    /* Descomentar si deseas un borde al enfocar */
+    /* Elimina el borde predeterminado al enfocar */
 }
 
 /* Ícono junto al selector de idioma */
 #language-selector+svg {
     transition: all 0.3s ease;
-    /* Transición suave para el ícono */
 }
 
 #language-selector:hover+svg {
@@ -75,29 +140,24 @@ header {
 /* ==========================
    Scroll Personalizado
 ========================== */
-/* Estilo del Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
     /* Ancho del scrollbar */
 }
 
-/* Estilo del pulgar (thumb) del Scrollbar */
 ::-webkit-scrollbar-thumb {
-    background-color: #b74b4b;
-    /* Color del pulgar */
+    background-color: var(--secondary-color);
     border-radius: 10px;
     /* Bordes redondeados */
     transition: background-color 0.3s ease;
-    /* Transición suave para el cambio de color */
+    /* Transición suave */
 }
 
-/* Hover sobre el pulgar del Scrollbar */
 ::-webkit-scrollbar-thumb:hover {
     background-color: #9e3a3a;
     /* Color más oscuro al pasar el mouse */
 }
 
-/* Fondo del Scrollbar (track) */
 ::-webkit-scrollbar-track {
     background-color: rgba(0, 0, 0, 0.1);
     /* Color del fondo del track */
@@ -108,9 +168,48 @@ header {
    Enlaces Activos en la Navegación
 ========================== */
 .active {
+    color: var(--primary-color) !important;
+    border-bottom: 2px solid var(--primary-color);
     /* Subrayado en la parte inferior */
-    color: #b74b4b !important;
-    border-bottom-width: 2px;
-    border-color: #b74b4b;
-    /* Color del texto activo */
+}
+
+/* ==========================
+   Botones
+========================== */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ==========================
+   Tarjetas (Cards)
+========================== */
+.card {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: var(--text-dark);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    /* Efecto de elevación */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Sombra al pasar el mouse */
+}
+/* ==========================
+   Destacados (Highlights)
+========================== */
+.highlight {
+    color: var(--primary-color);
+    /* Color para texto destacado */
 }
