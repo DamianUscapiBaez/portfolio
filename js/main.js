@@ -165,7 +165,6 @@ document.getElementById('prev').addEventListener('click', () => {
 
 // === Eventos de Carga y Scroll ===
 window.addEventListener('load', () => {
-    animatePreloader();
     setActiveLinkOnLoad();
     applyTheme();
     loadDataServices();
